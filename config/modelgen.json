@@ -1,0 +1,16 @@
+{
+  "db": {
+    "host": "localhost",
+    "port": 3306,
+    "password": "123456",
+    "user": "root",
+    "table": "user",
+    "database": "test",
+    "packageName": "model",
+    "jsonAnnotation": true,
+    "dbAnnotation": false,
+    "xmlAnnotation": false,
+    "gormAnnotation": true
+  },
+  "genPath" : "./extra/modelgen/models"
+}
