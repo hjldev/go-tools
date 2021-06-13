@@ -32,7 +32,7 @@ func GenerateFile(table *model.Table, pkgName string, conf *config.Config) {
 
 	structFile, _ := os.Create(structFileName)
 
-	structTemplate, err := template.ParseFiles("./internal/modelgen/templates/stru.tpl")
+	structTemplate, err := template.ParseFiles("./internal/modelgen/templates/struct.tpl")
 
 	if err != nil {
 		fmt.Println(err)
