@@ -2,6 +2,7 @@ package logger
 
 import (
 	"encoding/json"
+	"fmt"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
@@ -20,11 +21,13 @@ func NewLogger(logName string) {
 }
 
 func WriteStr(content string) {
+	fmt.Println(content)
 	logger.Info(content)
 }
 
 func WriteObj(o interface{}) {
 	data, _ := json.Marshal(o)
+	fmt.Println(string(data))
 	logger.Info(string(data))
 }
 
