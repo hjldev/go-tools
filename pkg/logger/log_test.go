@@ -3,7 +3,7 @@ package logger
 import "testing"
 
 func TestLog(t *testing.T) {
-	InitLogger("")
+	NewLogger("")
 	for {
 		Println("test")
 	}

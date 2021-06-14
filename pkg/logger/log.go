@@ -1,14 +1,14 @@
 package logger
 
 import (
-	"github.com/hjldev/go-tools/pkg/lumberjack"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 var logger *zap.Logger
 
-func InitLogger(logName string) {
+func NewLogger(logName string) {
 	writeSyncer := getLogWriter(logName)
 	encoder := getEncoder()
 	core := zapcore.NewCore(encoder, writeSyncer, zapcore.DebugLevel)
