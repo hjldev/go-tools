@@ -4,7 +4,5 @@ import "testing"
 
 func TestLog(t *testing.T) {
 	NewLogger("")
-	for {
-		Println("test")
-	}
+	WriteStr("test")
 }

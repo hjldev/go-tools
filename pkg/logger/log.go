@@ -1,6 +1,8 @@
 package logger
 
 import (
+	"encoding/json"
+
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 	"gopkg.in/natefinch/lumberjack.v2"
@@ -17,8 +19,13 @@ func NewLogger(logName string) {
 	defer logger.Sync()
 }
 
-func Println(content string) {
+func WriteStr(content string) {
 	logger.Info(content)
+}
+
+func WriteObj(o interface{}) {
+	data, _ := json.Marshal(o)
+	logger.Info(string(data))
 }
 
 func getEncoder() zapcore.Encoder {
